@@ -16,8 +16,16 @@ if os.geteuid() != 0:
 
 m = dmidecode.memory()
 
+count = 0
 for x in m.iteritems():
+    size = None
     try:
-        print(x[1]['data']['Size'])
+        size = x[1]['data']['Size']
+        count +=1
     except KeyError:
         pass
+    if size == None:
+        pass
+    else:
+        print (size)
+print('{} sticks in total.'.format(count))

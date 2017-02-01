@@ -21,10 +21,10 @@ for x in m.iteritems():
     size = None
     try:
         size = x[1]['data']['Size']
-        count +=1
+        count += 1
     except KeyError:
         pass
-    if size == None:
+    if size is None:
         pass
     else:
         print (size)
